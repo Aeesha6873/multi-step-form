@@ -15,7 +15,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100dvh;
+  height: auto;
 }
 .container {
   width: 60%;
@@ -409,7 +410,11 @@ input:checked + .slider:before {
 @media (max-width: 768px) {
   body {
     flex-direction: column;
+    justify-content: flex-start;
+
+    min-height: 100dvh;
     height: auto;
+    overflow-x: hidden;
     background-color: white;
   }
   .plan-card {
@@ -479,5 +484,25 @@ input:checked + .slider:before {
     width: 100%;
     position: static;
     margin-top: 20px;
+  }
+}
+@media (orientation: landscape) and (max-width: 768px) {
+  .container {
+    flex-direction: row;
+    height: auto;
+    width: 95%;
+  }
+
+  .form-container {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .steps {
+    width: 30%;
+    height: auto;
+    flex-direction: column;
+    justify-content: start;
   }
 }
